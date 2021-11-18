@@ -1,4 +1,4 @@
-# Educationalwebsite
+# Educationalwebsite Made By Flask
  # ADMIN
 Try to register as admin see blogs users instructors and other admin activities,You can also delete blogs and users,
 # INSTRUCTOR

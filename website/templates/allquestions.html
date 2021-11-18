@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% block title %}
+a  
+{%endblock%}
+ 
+{% block body %}
+
+<div class="container">
+
+            <h1>All Answered Questions</h1>
+                {% for question in questions %} 
+                            <!-- The Queston: -->
+                        <h4> {{question.question}}</h4>
+                            <h3>Asked By</h3>
+                            {% for user in users %}
+                                    {% if user.id == question.asked_by_id%}
+                                            {{user.first_name}}
+                                    {% endif %}
+                            {% endfor%}
+
+                        <br>
+                            <h3>Answered By</h3>
+                            
+                                {% for user in users %}
+                                    {% if user.id == question.asked_to_id%}
+                                            {{user.first_name}}
+                                    {% endif %}
+                                {% endfor%}
+
+
+                                <br><br><br>
+                                <h3>Answer </h3>
+                                <h4>{{question.answer}}</h4>
+
+
+      <hr style="width:100%;text-align:left;margin-left:0; background-color: #b7d0e2;; color:red;padding:5px;">
+
+                {%endfor%}
+
+</div>
+   {%endblock%}

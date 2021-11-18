@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% block title %}
+    Blog
+{%endblock%}
+{% block body %}
+
+<section class="news-box top-margin">
+    <div class="container">
+        <h2><span>New Courses</span></h2>
+        <div class="row">
+         {% for blog in blogs %}
+
+         <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="newsBox">
+                <div class="thumbnail">
+                    
+
+                    <div class="caption maxheight2">
+                    <div class="box_inner">
+
+                                <div class="box">
+                                    
+                                    <h2> <p class="title">{{blog.chapter}}</p></h2>
+                                    
+                                    <a href="\content\{{blog.id}}"><h3><p>{{blog.section}}</p></h3>  </a>
+                                </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+         {%endfor%}
+         
+        </div>
+    </div>
+</section>
+
+
+{%endblock%}

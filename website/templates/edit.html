@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{% block title %}
+    Blog
+{%endblock%}
+{% block body %}
+
+
+    {% for user in users %}
+      {{user.first_name}} {{user.id}}
+    {% endfor %}
+<h2>This is</h2>
+
+{%endblock%}

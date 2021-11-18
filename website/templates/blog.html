@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+{% block title %}
+    Blog
+{%endblock%}
+{% block body %}
+
+<div class="container">
+    
+    <div class="row">
+        {% for course in courses %} 
+        <!--/span3-->
+       
+        <div class="col-md-3">
+            <div class="grey-box-icon">
+                <div class="icon-box-top grey-box-icon-pos">
+                    <img src="../static/images/3.png" alt="" />
+                </div><!--icon box top -->
+                <h4>{{course.coursename}}</h4>
+                <p>{{course.section}}.</p>
+                 <p><a href="\seemore\{{course.coursename}}"><em>See More</em></a></p>
+            </div><!--grey box -->
+        </div><!--/span3-->
+         
+        {%endfor%}
+    </div>
+   
+</div>
+<!-- <section class="news-box top-margin">
+<div class="container">
+<h2><span>New Courses</span></h2>
+
+<div class="row">
+{% for course in courses %}
+
+
+    <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="newsBox">
+            <div class="thumbnail">
+                <figure><img src="../static/images/news2.jpg" alt=""></figure>
+                <div class="caption maxheight2">
+                <div class="box_inner">
+                            <div class="box">
+                                <p class="title"><h5>{{course.coursename|safe}}</h5></p>
+                                <p>Lorem ipsum dolor sit amet, conc tetu er adipi scing. Praesent ves tibuum molestie lacuiirhs. Aenean.</p>
+                            </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+     
+
+<!-- {%endfor%} -->
+</div>
+</div>
+    </section>
+   
+   -->
+{%endblock%}

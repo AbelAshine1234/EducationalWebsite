@@ -1,0 +1,16 @@
+ 
+
+.optionbox select {
+    background: #55444a;
+    color: #fff;
+    padding: 10px;
+    width: 250px;
+    height: 50px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 48px rgb(93, 15, 9);
+    -webkit-appearance: button;
+    outline: none
+}
+
+ 

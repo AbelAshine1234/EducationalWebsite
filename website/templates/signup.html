@@ -1,0 +1,107 @@
+{% extends 'base.html'%}
+{% block title %}
+    Home
+{%endblock%}
+
+{% block body %}
+  <!-- <div class="container" style="padding-left:314px; padding-top:45px"> -->
+
+
+
+    <header id="head" class="secondary">
+      <div class="container">
+              <h1>Sign UP</h1>
+              <p>Sign up for free to ask questions and to communicate teachers</p>
+          </div>
+  </header>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="section-title">    
+          {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %} </h1>
+       
+        <!-- Form -->
+        <form method="POST" action="/signup" class="form-light mt-20" role="form">
+          
+          <div class="form-group"> 
+            <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+            <input type="email" name="email"   class="form-control"  autocomplete="off" placeholder="Email" required />
+          </div>
+
+
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                <input type="password" class="form-control" name="password" placeholder="Password" required />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div> 
+                <div  class="form-group"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                <input type="password" class="form-control"  name="second-password" placeholder="Re-type Password" required />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div>  
+              <div class="form-group"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                <input type="text" name="first_name" class="form-control"  placeholder="First Name" />
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-md-6">
+            <div>  
+              <div class="form-group"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                <input type="text" name="last_name" class="form-control"placeholder="Last Name" required />
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="input_field radio_option form-group">
+            <input type="radio"value="student" checked="checked" name="registertype"  >
+            <label for="student" class="display-2"><h3>Student</h3></label>
+            <input type="radio" value="instructor" name="registertype" >
+            <label for="instructor"><h3>Instructor</h3></label>
+            <input type="radio" value="adminstrator" name="registertype" >
+            <label for="adminstrator"><h3>Adminstrator</h3></label>
+            </div>
+          
+
+        </div>
+
+        
+        
+
+        <button type="submit" class="btn btn-two">Sign Up</button><p><br/></p>
+      </form>
+      </div>
+
+
+
+
+
+ 
+      
+  </div>
+  </div>
+  
+{% endblock %}

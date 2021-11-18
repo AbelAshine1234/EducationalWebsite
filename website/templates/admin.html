@@ -1,0 +1,97 @@
+{% extends 'base.html'%}
+{% block title %}
+a  
+{%endblock%}
+ 
+{% block body %}
+
+
+<div class="container">
+    <!-- All Users  -->
+
+                <div style="margin-left: 400px;margin-bottom:40px; color:red;">
+
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        <ul class=flashes>
+                        {% for message in messages %}
+                        <h1>{{ message }}</h1>
+                        {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% endwith %}
+                </div>
+
+    <h1 style="margin-left: 400px;margin-bottom:40px;">All Users</h1>
+
+
+    {% for user in users%}
+         User  {{user.id}}
+         <h4>User Name       {{user.first_name}}{{user.last_name}}</h4>
+         <h4>User Email      {{user.email}}</h4>
+         <h4>User Type     {{user.type}}</h4>
+         <li ><a href="\delete\user\{{user.id}}">Delete User</a></li>
+        
+            <br>
+    {% endfor %}
+
+    <h1 style="margin-left: 400px;margin-bottom:40px;">All Blogs</h1>
+    {% for blog  in blogs%}
+         Blog {{blog.id}}
+         <h4>Author      {{blog.author}}</h4>
+         <h4>Chapter      {{blog.chapter|safe}}</h4>
+         <h4>Section    {{blog.section|safe}}</h4>
+         <h4>Content   {{blog.content|safe}}</h4>
+         <li ><a href="\delete\blog\{{blog.id}}">Delete Blog</a></li>
+        
+            <br>
+    {% endfor %}
+    <h1 style="margin-left: 400px;margin-bottom:40px;">All Questions</h1>
+    {% for question in questions%}
+         Question {{question.id}}
+         <h4>Question      {{question.question|safe}}</h4>
+         <h4>Answer       {{question.answer|safe}}</h4>
+         <h4>Asked By    {{question.asked_by_id}}</h4>
+         <h4>Asked To  {{question.asked_to_id}}</h4>
+         <li ><a href="\delete\question\{{question.id}}">Delete Question</a></li>
+        
+            <br>
+    {% endfor %}
+
+    <h1 style="margin-left: 400px;margin-bottom:40px;">Courses</h1>
+    {% for course in courses%}
+         Course {{course.id}}
+         <h4>Course Name      {{course.coursename}}</h4>
+         
+         <li ><a href="\delete\course\{{course.id}}">Delete Course</a></li>
+        
+            <br>
+    {% endfor %}
+
+
+
+    <h3 style="margin-left: 400px;margin-bottom:40px;">Add course to the database</h3>
+     <!-- Form -->
+     <form method="post" action="\admin" class="form-light mt-20" role="form">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">  
+                <input type="text" name="course" class="form-control"  placeholder="Add courses here" />
+                        
+            </div>
+          </div>
+
+        
+
+        
+      </div>
+        <button type="submit" class="btn btn-two">Add Course </button><p><br/></p>
+      </form>
+     
+      {% for course in courses %}
+      {{course.coursename}}
+      {% endfor %}
+
+</div>
+
+{% endblock %}

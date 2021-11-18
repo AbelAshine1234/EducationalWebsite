@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+{% block body %}
+<link rel="stylesheet" href="../static/css/dropbox.css">
+
+
+     <!-- Flash message -->
+     {% with messages = get_flashed_messages() %}
+     {% if messages %}
+         <ul class=flashes>
+         {% for message in messages %}
+         <li>{{ message }}</li>
+         {% endfor %}
+         </ul>
+     {% endif %}
+   {% endwith %}
+<div class="container">
+<form action="\question" method="post" >
+    <br>
+      
+    
+    <div class="form-group">
+      <label><h2>What is your question?</h2></label>
+      <textarea class="form-control" id="message" name="question" placeholder="Question Here" style="height:100px;"></textarea>
+    </div>
+    
+     
+   <div class="form-select" aria-label="Default select example">
+    <h3>Instructors</h3>
+    <br>
+    <div class="optionbox"> 
+      <select name="instructor">
+        {% for instructor in instructors%}
+        <option value="{{instructor.id}}"  >{{instructor.first_name}}</option>
+         
+        {%endfor%}
+        </select>
+    </div>
+   </div>
+  <br><br><br>
+  
+   <button type="submit" class="btn btn-two">Ask Questions</button><p><br/></p>
+    
+       
+
+</form>
+</div>
+{%endblock%}

@@ -1,0 +1,78 @@
+{% extends 'base.html'%}
+{% block title %}
+    Home
+{%endblock%}
+{% block body %}
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="section-title">    
+          {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %} </h1>
+       
+        <!-- Form -->
+        <form method="post" action="login" class="form-light mt-20" role="form">
+          
+          <div class="form-group"> 
+            <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+            <input type="email" name="email" class="form-control" placeholder="Email" required />
+          </div>
+
+
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                    <label class="form-control-label" name="password">PASSWORD</label>
+                    <input type="password" class="form-control" name="password">
+                
+              </div>
+            </div>
+
+          
+
+          <br>
+          <hr>
+
+ 
+
+
+          <div class="input_field radio_option form-group">
+            <input type="radio"value="student" checked="checked" name="registertype"  >
+            <label for="student" class="display-2"><h3>Student</h3></label>
+            <input type="radio" value="instructor" name="registertype" >
+            <label for="instructor"><h3>Instructor</h3></label>
+            <input type="radio" value="adminstrator" name="registertype" >
+            <label for="adminstrator"><h3>Adminstrator</h3></label>
+            </div>
+          
+
+        </div>
+
+        
+        
+
+          <button type="submit" class="btn btn-two">Login</button><p><br/></p>
+        </form>
+      </div>
+
+
+
+
+
+ 
+      
+  </div>
+  </div>
+  
+
+{% endblock %}
